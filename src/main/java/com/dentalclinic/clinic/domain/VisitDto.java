@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -20,5 +21,5 @@ public class VisitDto {
     private LocalTime hour;
 
     @JsonProperty("VISIT_DAY")
-    private Date visitDay;
+    private LocalDate visitDay;
 }
