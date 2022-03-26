@@ -18,13 +18,13 @@ public class Doctor {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "DOCTOR_ID")
+    @Column(name = "DOCTOR_ID", unique = true)
     private Long id;
 
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "NAME")
+    @Column(name = "SURNAME")
     private String surname;
 
     @Column(name = "SPECIALISATION")

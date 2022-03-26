@@ -20,7 +20,7 @@ public class Visit {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "VISIT_ID")
+    @Column(name = "VISIT_ID", unique = true)
     private Long id;
 
     @NotNull
@@ -31,11 +31,11 @@ public class Visit {
     @Column(name = "VISIT_DATE")
     private Date visitDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "PATIENT_ID")
     private Patient patient;
 
-    @ManyToOne
-    @JoinColumn(name = "VISIT_ID")
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @JoinColumn(name = "DOCTOR_ID")
     private Doctor doctor;
 }

@@ -20,16 +20,16 @@ public class Patient {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "PATIENT_ID")
+    @Column(name = "PATIENT_ID", unique = true)
     private Long id;
 
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "NAME")
+    @Column(name = "SURNAME")
     private String surname;
 
-    @OneToMany(targetEntity = Visit.class, mappedBy = "visit", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Visit.class, mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Visit> visits = new ArrayList<>();
 
 }
