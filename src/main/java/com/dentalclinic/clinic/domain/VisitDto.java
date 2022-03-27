@@ -21,4 +21,10 @@ public class VisitDto {
 
     @JsonProperty("VISIT_DAY")
     private LocalDate visitDay;
+
+    @JsonProperty("PATIENT")
+    private Patient patient;
+
+    @JsonProperty("DOCTOR")
+    private Doctor doctor;
 }

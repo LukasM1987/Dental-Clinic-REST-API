@@ -43,4 +43,10 @@ public class Visit {
         this.hour = visitHour;
         this.visitDay = visitDay;
     }
+
+    public Visit(Long id, LocalTime visitHour, LocalDate visitDay) {
+        this.id = id;
+        this.hour = visitHour;
+        this.visitDay = visitDay;
+    }
 }

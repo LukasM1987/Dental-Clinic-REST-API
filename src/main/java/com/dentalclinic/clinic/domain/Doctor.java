@@ -38,7 +38,13 @@ public class Doctor {
         this.surname = surname;
         this.specialisation = specialisation;
         this.visits = new ArrayList<Visit>();
-
     }
 
+    public Doctor(Long id, String name, String surname, String specialisation) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.specialisation = specialisation;
+        this.visits = new ArrayList<Visit>();
+    }
 }

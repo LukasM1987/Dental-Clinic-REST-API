@@ -18,4 +18,7 @@ public class DoctorDto {
 
     @JsonProperty("SURNAME")
     private String surname;
+
+    @JsonProperty("SPECIALISATIONS")
+    private String specialisations;
 }
