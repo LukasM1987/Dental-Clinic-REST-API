@@ -31,6 +31,14 @@ public class Doctor {
     private String specialisation;
 
     @OneToMany(targetEntity = Visit.class, mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Visit> visits = new ArrayList<>();
+    private List<Visit> visits;
+
+    public Doctor(String name, String surname, String specialisation) {
+        this.name = name;
+        this.surname = surname;
+        this.specialisation = specialisation;
+        this.visits = new ArrayList<Visit>();
+
+    }
 
 }

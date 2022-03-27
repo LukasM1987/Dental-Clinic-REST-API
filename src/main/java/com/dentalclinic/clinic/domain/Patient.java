@@ -30,6 +30,12 @@ public class Patient {
     private String surname;
 
     @OneToMany(targetEntity = Visit.class, mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Visit> visits = new ArrayList<>();
+    private List<Visit> visits;
+
+    public Patient(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+        this.visits = new ArrayList<Visit>();
+    }
 
 }

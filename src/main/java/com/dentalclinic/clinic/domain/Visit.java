@@ -38,4 +38,9 @@ public class Visit {
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "DOCTOR_ID")
     private Doctor doctor;
+
+    public Visit(LocalTime visitHour, Date visitDay) {
+        this.hour = visitHour;
+        this.visitDay = visitDay;
+    }
 }
