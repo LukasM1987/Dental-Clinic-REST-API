@@ -26,7 +26,7 @@ public class DoctorController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "addDoctor", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void addPatient(@RequestBody final DoctorDto doctorDto) {
+    public void addDoctor(@RequestBody final DoctorDto doctorDto) {
         Doctor doctor = doctorMapper.mapToDoctor(doctorDto);
         doctorService.addDoctor(doctor);
     }
