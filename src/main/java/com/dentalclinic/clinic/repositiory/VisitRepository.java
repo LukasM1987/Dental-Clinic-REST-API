@@ -12,8 +12,8 @@ import java.util.Date;
 @Transactional
 public interface VisitRepository extends CrudRepository<Visit, Long> {
 
-    /*
-    Visit findVisitByDate(Date visitDate);
-    */
+
+    Visit findVisitByVisitDay(Date visitDay);
+
     Visit findVisitByHour(LocalTime hour);
 }
