@@ -2,12 +2,14 @@ package com.dentalclinic.clinic.domain;
 
 
 import com.dentalclinic.clinic.repositiory.DoctorRepository;
+import com.dentalclinic.clinic.repositiory.VisitRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +23,8 @@ public class DoctorTestSuite {
 
     @Autowired
     private DoctorRepository doctorRepository;
+    @Autowired
+    private VisitRepository visitRepository;
 
     @Test
     public void addDoctorTest() {
@@ -48,7 +52,7 @@ public class DoctorTestSuite {
     public void addDoctorWithVisitTest() {
         //Given
         Doctor doctor = new Doctor("Lukasz", "Marchel", "Surgery");
-        Visit visit = new Visit(LocalTime.now(), new Date());
+        Visit visit = new Visit(LocalTime.now(), LocalDate.now());
         doctor.getVisits().add(visit);
 
         //When
@@ -63,6 +67,7 @@ public class DoctorTestSuite {
         //Clean Up
         try {
             doctorRepository.deleteById(doctorId);
+            visitRepository.deleteById(visitId);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.Optional;
@@ -21,6 +22,8 @@ public class PatientTestSuite {
 
     @Autowired
     private PatientRepository patientRepository;
+    @Autowired
+    private VisitRepository visitRepository;
 
     @Test
     public void addPatientTest() {
@@ -48,7 +51,7 @@ public class PatientTestSuite {
     public void addPatientWithVisitTest() {
         //Given
         Patient patient = new Patient("Lukasz", "Marchel");
-        Visit visit = new Visit(LocalTime.now(), new Date());
+        Visit visit = new Visit(LocalTime.now(), LocalDate.now());
         patient.getVisits().add(visit);
 
         //When
@@ -63,6 +66,7 @@ public class PatientTestSuite {
         //Clean Up
         try {
             patientRepository.deleteById(patientId);
+            visitRepository.deleteById(visitId);
         } catch (Exception e) {
             e.printStackTrace();
         }

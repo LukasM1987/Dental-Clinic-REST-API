@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -29,7 +29,7 @@ public class Visit {
 
     @NotNull
     @Column(name = "VISIT_DAY")
-    private Date visitDay;
+    private LocalDate visitDay;
 
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "PATIENT_ID")
@@ -39,7 +39,7 @@ public class Visit {
     @JoinColumn(name = "DOCTOR_ID")
     private Doctor doctor;
 
-    public Visit(LocalTime visitHour, Date visitDay) {
+    public Visit(LocalTime visitHour, LocalDate visitDay) {
         this.hour = visitHour;
         this.visitDay = visitDay;
     }
