@@ -15,4 +15,6 @@ public interface VisitRepository extends CrudRepository<Visit, Long> {
     Visit findVisitByVisitDay(LocalDate visitDay);
 
     Visit findVisitByHour(LocalTime hour);
+
+    Visit findVisitById(Long id);
 }

@@ -10,5 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface PatientRepository extends CrudRepository<Patient, Long> {
 
     Patient findBySurname(String surname);
+    Patient findPatientById(Long id);
 
 }

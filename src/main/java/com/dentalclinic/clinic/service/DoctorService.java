@@ -18,8 +18,8 @@ public class DoctorService {
         return doctorRepository.findAll();
     }
 
-    public Optional<Doctor> getDoctor(Long id) {
-        return doctorRepository.findById(id);
+    public Doctor getDoctor(Long id) {
+        return doctorRepository.findDoctorById(id);
     }
 
     public Doctor addDoctor(Doctor doctor) {
@@ -32,5 +32,9 @@ public class DoctorService {
 
     public Doctor getDoctorBySpecialisation(Doctor doctor) {
         return doctorRepository.findBySpecialisation(doctor.getSpecialisation());
+    }
+
+    public void deleteDoctor(Long id) {
+        doctorRepository.deleteById(id);
     }
 }

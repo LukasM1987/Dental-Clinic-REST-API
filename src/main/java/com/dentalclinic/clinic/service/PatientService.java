@@ -13,16 +13,16 @@ public class PatientService {
 
     private final PatientRepository patientRepository;
 
-    public Optional<Patient> getPatient(Long id) {
-        return patientRepository.findById(id);
+    public Patient getPatient(Long id) {
+        return patientRepository.findPatientById(id);
     }
 
     public Patient addPatient(Patient patient) {
         return patientRepository.save(patient);
     }
 
-    public void deletePatient(Patient patient) {
-        patientRepository.delete(patient);
+    public void deletePatient(Long id) {
+        patientRepository.deleteById(id);
     }
 
     public Patient getPatientBySurname(Patient patient) {

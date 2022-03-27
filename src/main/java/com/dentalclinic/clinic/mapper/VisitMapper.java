@@ -15,8 +15,8 @@ public class VisitMapper {
                 visitDto.getDoctor());
     }
 
-    public Visit mapToVisitDto(final Visit visit) {
-        return new Visit(visit.getId(),
+    public VisitDto mapToVisitDto(final Visit visit) {
+        return new VisitDto(visit.getId(),
                 visit.getHour(),
                 visit.getVisitDay(),
                 visit.getPatient(),
