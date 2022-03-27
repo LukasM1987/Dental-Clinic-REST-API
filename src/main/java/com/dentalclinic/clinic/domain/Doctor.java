@@ -30,7 +30,7 @@ public class Doctor {
     @Column(name = "SPECIALISATION")
     private String specialisation;
 
-    @OneToMany(targetEntity = Visit.class, mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Visit.class, mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Visit> visits = new ArrayList<>();
 
 }

@@ -24,12 +24,12 @@ public class Visit {
     private Long id;
 
     @NotNull
-    @Column(name = "HOUR")
+    @Column(name = "VISIT_HOUR")
     private LocalTime hour;
 
     @NotNull
-    @Column(name = "VISIT_DATE")
-    private Date visitDate;
+    @Column(name = "VISIT_DAY")
+    private Date visitDay;
 
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "PATIENT_ID")
