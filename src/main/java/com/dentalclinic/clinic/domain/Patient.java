@@ -29,7 +29,7 @@ public class Patient {
     @Column(name = "SURNAME")
     private String surname;
 
-    @OneToMany(targetEntity = Visit.class, mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(targetEntity = Visit.class, mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Visit> visits;
 
     public Patient(String name, String surname) {
