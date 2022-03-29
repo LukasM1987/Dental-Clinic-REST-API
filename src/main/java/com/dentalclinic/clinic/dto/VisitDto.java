@@ -1,5 +1,7 @@
-package com.dentalclinic.clinic.domain;
+package com.dentalclinic.clinic.dto;
 
+import com.dentalclinic.clinic.domain.Doctor;
+import com.dentalclinic.clinic.domain.Patient;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -23,8 +25,8 @@ public class VisitDto {
     private LocalDate visitDay;
 
     @JsonProperty("PATIENT")
-    private Patient patient;
+    private Long patient;
 
     @JsonProperty("DOCTOR")
-    private Doctor doctor;
+    private Long doctor;
 }

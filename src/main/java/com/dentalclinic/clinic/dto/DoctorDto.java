@@ -1,5 +1,4 @@
-package com.dentalclinic.clinic.domain;
-
+package com.dentalclinic.clinic.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,7 +8,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PatientDto {
+public class DoctorDto {
 
     @JsonProperty("ID")
     private Long id;
@@ -19,4 +18,7 @@ public class PatientDto {
 
     @JsonProperty("SURNAME")
     private String surname;
+
+    @JsonProperty("SPECIALISATION")
+    private String specialisation;
 }

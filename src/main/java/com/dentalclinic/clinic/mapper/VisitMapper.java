@@ -1,25 +1,16 @@
 package com.dentalclinic.clinic.mapper;
 
 import com.dentalclinic.clinic.domain.Visit;
-import com.dentalclinic.clinic.domain.VisitDto;
+import com.dentalclinic.clinic.dto.VisitDto;
 import org.springframework.stereotype.Service;
 
 @Service
 public class VisitMapper {
 
-    public Visit mapToVisit(final VisitDto visitDto) {
-        return new Visit(visitDto.getId(),
-                visitDto.getHour(),
-                visitDto.getVisitDay(),
-                visitDto.getPatient(),
-                visitDto.getDoctor());
-    }
-
-    public VisitDto mapToVisitDto(final Visit visit) {
+    public VisitDto mapToVisitDto(final Visit visit, Long doctorId, Long patientId) {
         return new VisitDto(visit.getId(),
                 visit.getHour(),
                 visit.getVisitDay(),
-                visit.getPatient(),
-                visit.getDoctor());
+                doctorId, patientId);
     }
 }

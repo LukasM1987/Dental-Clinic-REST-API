@@ -34,8 +34,8 @@ public class VisitService {
         Visit visit = new Visit();
         visit.setHour(LocalTime.now());
         visit.setVisitDay(LocalDate.now());
-        visit.setDoctor(doctor);
         visit.setPatient(patient);
+        visit.setDoctor(doctor);
         return visitRepository.save(visit);
     }
 

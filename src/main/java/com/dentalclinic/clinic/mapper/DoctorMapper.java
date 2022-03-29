@@ -1,7 +1,7 @@
 package com.dentalclinic.clinic.mapper;
 
 import com.dentalclinic.clinic.domain.Doctor;
-import com.dentalclinic.clinic.domain.DoctorDto;
+import com.dentalclinic.clinic.dto.DoctorDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public class DoctorMapper {
         return new Doctor(doctorDto.getId(),
                 doctorDto.getName(),
                 doctorDto.getSurname(),
-                doctorDto.getSpecialisations());
+                doctorDto.getSpecialisation());
     }
 
     public DoctorDto mapToDoctorDto(final Doctor doctor) {

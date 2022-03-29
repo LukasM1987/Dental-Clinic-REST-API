@@ -1,7 +1,7 @@
 package com.dentalclinic.clinic.mapper;
 
 import com.dentalclinic.clinic.domain.Patient;
-import com.dentalclinic.clinic.domain.PatientDto;
+import com.dentalclinic.clinic.dto.PatientDto;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -14,7 +14,7 @@ import java.time.LocalTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "VISITATIONS")
+@Entity(name = "VISITS")
 public class Visit {
 
     @Id
@@ -31,11 +31,11 @@ public class Visit {
     @Column(name = "VISIT_DAY")
     private LocalDate visitDay;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "PATIENT_ID")
     private Patient patient;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "DOCTOR_ID")
     private Doctor doctor;
 

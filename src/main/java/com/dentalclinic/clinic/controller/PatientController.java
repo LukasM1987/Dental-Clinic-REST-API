@@ -1,7 +1,7 @@
 package com.dentalclinic.clinic.controller;
 
 import com.dentalclinic.clinic.domain.Patient;
-import com.dentalclinic.clinic.domain.PatientDto;
+import com.dentalclinic.clinic.dto.PatientDto;
 import com.dentalclinic.clinic.exceptions.PatientException;
 import com.dentalclinic.clinic.mapper.PatientMapper;
 import com.dentalclinic.clinic.service.PatientService;
