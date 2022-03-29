@@ -25,8 +25,8 @@ public class VisitDto {
     private LocalDate visitDay;
 
     @JsonProperty("PATIENT")
-    private Long patient;
+    private PatientDto patient;
 
     @JsonProperty("DOCTOR")
-    private Long doctor;
+    private DoctorDto doctor;
 }
