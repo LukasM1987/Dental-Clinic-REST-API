@@ -5,11 +5,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 @Transactional
 public interface PatientRepository extends CrudRepository<Patient, Long> {
 
-    Patient findBySurname(String surname);
+    List<Patient> findBySurname(String surname);
     Patient findPatientById(Long id);
 
 }

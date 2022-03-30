@@ -14,8 +14,8 @@ public interface DoctorRepository extends CrudRepository<Doctor, Long> {
 
     List<Doctor> findAll();
 
-    Doctor findBySurname(String surname);
-    Doctor findBySpecialisation(String specialisation);
+    List<Doctor> findBySurname(String surname);
+    List<Doctor> findBySpecialisation(String specialisation);
     Doctor findDoctorById(Long id);
 
 }

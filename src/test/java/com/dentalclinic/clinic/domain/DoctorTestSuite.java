@@ -94,11 +94,11 @@ public class DoctorTestSuite {
         //When
         doctorRepository.save(doctor);
         Long id = doctor.getId();
-        Doctor doctorSurname = doctorRepository.findBySurname(doctor.getSurname());
+        List<Doctor> doctorSurname = doctorRepository.findBySurname(doctor.getSurname());
 
         //Then
         assertNotNull(doctorSurname);
-        assertEquals("Marchel", doctorSurname.getSurname());
+        assertEquals("Marchel", doctorSurname.get(0).getSurname());
 
         //Clean Up
         try {
@@ -116,11 +116,11 @@ public class DoctorTestSuite {
         //When
         doctorRepository.save(doctor);
         Long id = doctor.getId();
-        Doctor doctorSpecialisation = doctorRepository.findBySpecialisation(doctor.getSpecialisation());
+        List<Doctor> doctorSpecialisation = doctorRepository.findBySpecialisation(doctor.getSpecialisation());
 
         //Then
         assertNotNull(doctorSpecialisation);
-        assertEquals("Surgery", doctorSpecialisation.getSpecialisation());
+        assertEquals("Surgery", doctorSpecialisation.get(0).getSpecialisation());
 
         //Clean Up
         try {

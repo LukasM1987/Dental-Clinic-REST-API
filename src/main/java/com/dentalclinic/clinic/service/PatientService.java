@@ -5,6 +5,7 @@ import com.dentalclinic.clinic.repositiory.PatientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,7 +26,7 @@ public class PatientService {
         patientRepository.deleteById(id);
     }
 
-    public Patient getPatientBySurname(Patient patient) {
-        return patientRepository.findBySurname(patient.getSurname());
+    public List<Patient> getPatientBySurname(String surname) {
+        return patientRepository.findBySurname(surname);
     }
 }

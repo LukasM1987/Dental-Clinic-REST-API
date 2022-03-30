@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.*;
@@ -93,11 +94,11 @@ public class PatientTestSuite {
         //When
         patientRepository.save(patient);
         Long id = patient.getId();
-        Patient patientSurname = patientRepository.findBySurname(patient.getSurname());
+        List<Patient> patientSurname = patientRepository.findBySurname(patient.getSurname());
 
         //Then
         assertNotNull(patientSurname);
-        assertEquals("Marchel", patientSurname.getSurname());
+        assertEquals("Marchel", patientSurname.get(0).getSurname());
 
         //Clean Up
         try {

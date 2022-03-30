@@ -26,12 +26,12 @@ public class DoctorService {
         return doctorRepository.save(doctor);
     }
 
-    public Doctor getDoctorBySurname(Doctor doctor) {
-        return doctorRepository.findBySurname(doctor.getSurname());
+    public List<Doctor> getDoctorBySurname(String surname) {
+        return doctorRepository.findBySurname(surname);
     }
 
-    public Doctor getDoctorBySpecialisation(Doctor doctor) {
-        return doctorRepository.findBySpecialisation(doctor.getSpecialisation());
+    public List<Doctor> getDoctorBySpecialisation(String specialisation) {
+        return doctorRepository.findBySpecialisation(specialisation);
     }
 
     public void deleteDoctor(Long id) {

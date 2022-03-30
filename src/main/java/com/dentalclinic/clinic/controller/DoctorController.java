@@ -32,8 +32,20 @@ public class DoctorController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "getDoctor")
-    public DoctorDto getDoctorById(final Long id) throws DoctorException {
+    public DoctorDto getDoctorById(final Long id) {
         return doctorMapper.mapToDoctorDto(doctorService.getDoctor(id));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "getDoctorBySurname")
+    public List<DoctorDto> getDoctorBySurname(@RequestParam String surname) {
+        List<Doctor> doctors = doctorService.getDoctorBySurname(surname);
+        return doctorMapper.mapToDoctorDtoList(doctors);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "getDoctorBySpecialisation")
+    public List<DoctorDto> getDoctorBySpecialisation(@RequestParam String specialisation) {
+        List<Doctor> doctors = doctorService.getDoctorBySurname(specialisation);
+        return doctorMapper.mapToDoctorDtoList(doctors);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteDoctor")
