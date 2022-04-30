@@ -44,7 +44,7 @@ public class DoctorController {
 
     @RequestMapping(method = RequestMethod.GET, value = "getDoctorBySpecialisation")
     public List<DoctorDto> getDoctorBySpecialisation(@RequestParam String specialisation) {
-        List<Doctor> doctors = doctorService.getDoctorBySurname(specialisation);
+        List<Doctor> doctors = doctorService.getDoctorBySpecialisation(specialisation);
         return doctorMapper.mapToDoctorDtoList(doctors);
     }
 
