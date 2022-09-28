@@ -11,12 +11,12 @@ import lombok.Getter;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PatientDto {
 
-    @JsonProperty("ID")
+    @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("NAME")
+    @JsonProperty("name")
     private String name;
 
-    @JsonProperty("SURNAME")
+    @JsonProperty("surname")
     private String surname;
 }

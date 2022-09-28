@@ -18,15 +18,15 @@ public class VisitDto {
     @JsonProperty("ID")
     private Long id;
 
-    @JsonProperty("VISIT_HOUR")
+    @JsonProperty("hour")
     private LocalTime hour;
 
-    @JsonProperty("VISIT_DAY")
+    @JsonProperty("visitDay")
     private LocalDate visitDay;
 
-    @JsonProperty("PATIENT")
+    @JsonProperty("patient")
     private PatientDto patient;
 
-    @JsonProperty("DOCTOR")
+    @JsonProperty("doctor")
     private DoctorDto doctor;
 }
