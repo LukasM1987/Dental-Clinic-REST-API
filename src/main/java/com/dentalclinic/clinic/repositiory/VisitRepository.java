@@ -7,14 +7,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Optional;
 
 @Repository
 @Transactional
 public interface VisitRepository extends CrudRepository<Visit, Long> {
 
-    Visit findVisitByVisitDay(LocalDate visitDay);
+    @Override
+    Optional<Visit> findById(Long aLong);
 
-    Visit findVisitByHour(LocalTime hour);
+    Optional<Visit> findVisitByVisitDay(LocalDate visitDay);
 
-    Visit findVisitById(Long id);
+    Optional<Visit> findVisitByHour(LocalTime hour);
+
 }

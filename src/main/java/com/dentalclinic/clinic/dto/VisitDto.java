@@ -6,12 +6,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VisitDto {
 
@@ -24,9 +26,9 @@ public class VisitDto {
     @JsonProperty("visitDay")
     private LocalDate visitDay;
 
-    @JsonProperty("patient")
-    private PatientDto patient;
+    @JsonProperty("patientId")
+    private Long patientId;
 
     @JsonProperty("doctor")
-    private DoctorDto doctor;
+    private Long doctorId;
 }
