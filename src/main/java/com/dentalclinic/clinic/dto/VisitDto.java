@@ -29,6 +29,6 @@ public class VisitDto {
     @JsonProperty("patientId")
     private Long patientId;
 
-    @JsonProperty("doctor")
+    @JsonProperty("doctorId")
     private Long doctorId;
 }
