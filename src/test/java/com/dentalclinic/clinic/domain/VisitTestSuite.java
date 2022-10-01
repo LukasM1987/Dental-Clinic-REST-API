@@ -1,5 +1,6 @@
 package com.dentalclinic.clinic.domain;
 
+import com.dentalclinic.clinic.exceptions.VisitException;
 import com.dentalclinic.clinic.repositiory.VisitRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,7 +45,7 @@ public class VisitTestSuite {
     }
 
     @Test
-    public void findVisitByDateTest() {
+    public void findVisitByDateTest() throws VisitException {
         //Given
         LocalDate day = LocalDate.of(2022, 03, 27);
         Visit visit = new Visit(LocalTime.now(), day);
@@ -52,7 +53,7 @@ public class VisitTestSuite {
         //When
         visitRepository.save(visit);
         Long id = visit.getId();
-        Visit visitDay = visitRepository.findVisitByVisitDay(day);
+        Visit visitDay = visitRepository.findVisitByVisitDay(day).orElseThrow(VisitException::new);
 
         //Then
         assertNotNull(visitDay);
